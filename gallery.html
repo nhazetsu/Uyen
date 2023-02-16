@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Ảnh kĩ niệm</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/gallery.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/heart.css" />
+
+</head>
+<body>
+	<div class="buttons">
+		<a href="index.html" class="btn btn-bir">Sinh nhật</a>
+		<a href="timeline.html" class="btn btn-timeline">Dòng thời gian</a>
+        <a href="gallery.html" class="btn btn-gallery">Ảnh kĩ niệm</a>
+    </div>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <a href="./img/uyen_1.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_1.jpg" class="img-fluid rounded">
+    </a>
+    <a href="./img/uyen_2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_2.jpg" class="img-fluid rounded">
+    </a>
+    <a href="./img/uyen_3.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_3.jpg" class="img-fluid rounded">
+    </a>
+  </div>
+  <div class="row">
+    <a href="./img/uyen_4.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_4.jpg" class="img-fluid rounded">
+    </a>
+    <a href="./img/uyen_5.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_5.jpg" class="img-fluid rounded">
+    </a>
+    <a href="./img/uyen_6.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4"><br>
+      <img src="./img/uyen_6.jpg" class="img-fluid rounded">
+    </a><br>
+	
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js'></script>
+  <script  src="./js/script.js"></script>
+
+<!-- hiệu ứng chuột và cảm ứng -->
+          <script>
+		  <!-- chuột -->
+            document.addEventListener('mousemove', function(e) {
+                let body = document.querySelector('body');
+                let heart = document.createElement('span');
+                let x = e.offsetX;
+                let y = e.offsetY;
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+
+                let size = Math.random() * 80;
+                heart.style.width = 20 + size + 'px';
+                heart.style.height = 20 + size + 'px';
+
+                let transformValue = Math.random() * 360;
+                heart.style.transform = 'rotate(' + transformValue + 'deg)';
+
+                body.appendChild(heart);
+
+                setTimeout(function() {
+                    heart.remove();
+                }, 1000)
+            });
+			<!-- touch -->
+			document.addEventListener('touchmove', function(e) {
+			let body = document.querySelector('body');
+			let heart = document.createElement('span');
+			let x = e.touches[0].clientX;
+			let y = e.touches[0].clientY;
+			heart.style.left = x + 'px';
+			heart.style.top = y + 'px';
+			
+			let size = Math.random() * 80;
+			heart.style.width = 20 + size + 'px';
+			heart.style.height = 20 + size + 'px';
+			
+			let transformValue = Math.random() * 360;
+			
+			heart.style.transform = 'rotate(' + transformValue + 'deg)';
+			
+			body.appendChild(heart);
+			
+			setTimeout(function() {
+				heart.remove();
+			}, 500)
+});
+
+        </script>
+</body>
+</html>
